@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js" defer></script>
+    <script src="jogo.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div id="menuInicial" class="menu">
+            <h1>✨ Jogo da Velha ✨</h1>
+            <div class="menu-card">
+                <input type="text" id="jogador1" placeholder="Jogador 1">
+                <input type="text" id="jogador2" placeholder="Jogador 2">
+                <button onclick="iniciarJogo()">
+                    Jogar
+                </button>
+            </div>
+        </div>
+        <div id="placar" class="hidden">
+            <h2 class="placar">Placar</h2>
+            <div class="placar">
+                <p id="pontosJogador1"></p>
+                <p id="pontosJogador2"></p>
+            </div>
+        </div>
+        <h3 id="jogadorAtual"> </h3>
+        <div id="game">
+            <table cellpading="0" cellspacing="1">
+                <tr border="1">
+                    <td data-pos="0">&nbsp;</td>
+                    <td data-pos="1">&nbsp;</td>
+                    <td data-pos="2">&nbsp;</td>
+                </tr>
+                <tr border="1">
+                    <td data-pos="3">&nbsp;</td>
+                    <td data-pos="4">&nbsp;</td>
+                    <td data-pos="5">&nbsp;</td>
+                </tr>
+                <tr border="1">
+                    <td data-pos="6">&nbsp;</td>
+                    <td data-pos="7">&nbsp;</td>
+                    <td data-pos="8">&nbsp;</td>
+                </tr>
+            </table>
+            <input type="button" value="Reiniciar" onclick="resetJogo()">
+        </div>
+        <div id="popup" class="popup hidden">
+            <div class="conteudo-popup">
+                <h2 id="mensagemPopup"></h2>
+                <button onclick="fecharPopup()">OK</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,241 @@
+body {
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #edf1f7,
+        #c0c6ce,
+        #b3b9c2
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: desaparecer 0.5 ease;
+}
+
+.menu-card {
+    width: 100%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 30px;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+}
+
+.menu-card input {
+    width: 95%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+}
+
+.menu-card button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: #b3c4e9;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menu-card button:hover {
+    transform: translateY(-2px);
+    background: #1d4ed8;
+}
+
+#game {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+    transition: 0.4s ease;
+}
+
+#game.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: all;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    padding: 20px;
+}
+
+table {
+    width: 90vw;
+    max-width: 550px;
+    height: auto;
+    border: none;
+    border-collapse: separate;
+    border-spacing: 5px;
+}
+
+tr {
+    background-color: rgb(4, 5, 78);
+    font: bold 46px verdana;
+    color: white;
+}
+
+td {
+    background: rgba(255, 255, 255, 0.08);
+    text-align: center;
+    width: 120px;
+    height: 120px;
+    font-size: 50px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+td:hover {
+    background-color: rgb(158, 187, 212);
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.03);
+}
+
+td:active {
+    transform: scale(0.9);
+}
+
+input[type=button] {
+    width: 100%;
+    max-width: 550px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+input[type=button]:hover {
+    transform: translateY(-2px);
+    background: #b0c1eb;
+}
+
+input[type=button]:active {
+    transform: scale(0.97);
+}
+
+.placar {
+    display: flex;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 15px 25px;
+    border: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.placar p {
+    margin: 5px 0;
+}
+
+.win {
+    background-color: gold !important;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px gold;
+}
+
+.ativo {
+    color: #e2741a;
+    text-shadow: 0 0 10px gold;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.conteudo-popup {
+    background: rgb(161, 36, 36);
+    padding: 30px;
+    border-radius: 20px;
+    min-width: 300px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+    animation: aparecerPopup 0.25s ease;
+}
+
+.conteudo-popup h2 {
+    margin-bottom: 20px;
+    color: #111827;
+}
+
+.conteudo-popup button {
+    background: rgb(168, 184, 204);
+    border: none;
+    padding: 5px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.conteudo-popup button:hover {
+    background: #6985d3;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes desaparecer {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes aparecerPopup {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 600px) {
+    td {
+        width: 80px;
+        height: 80px;
+        font-size: 36px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+}
